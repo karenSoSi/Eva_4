@@ -31,7 +31,15 @@
 				</tr>
 				<tr>
 					<td>Hora:</td>
-					<td><input type="text" name="hora" required/></td>
+					<td>
+						<select name="hora" required>
+			              	<option> 10:00</option>
+			                <option> 11:00</option>
+			            	<option> 12:00</option>
+			            	<option> 15:00</option>
+			                <option> 16:00</option>
+			        	</select>
+					</td>
 				</tr>
 				<tr>
 					<td>Direccion:</td>
