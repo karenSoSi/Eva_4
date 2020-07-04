@@ -1,0 +1,15 @@
+@charset "UTF-8";
+body{
+	margin: 20px;
+}
+h1{
+	font-family: Time New Roman;
+	text-align: center;
+	
+}
+input{
+	border: 1px solid black;
+}
+table tr, td{
+	margin: 20px;
+}
