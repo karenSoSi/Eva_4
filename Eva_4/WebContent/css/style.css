@@ -1,6 +1,13 @@
 @charset "UTF-8";
 body{
-	margin: 20px;
+	margin: 15px;
+	padding: 10px;
+	background-color: #DCD9D4; 
+	background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+	background-blend-mode: soft-light,screen;
+	font-family: 'Times New Roman', Times, serif;
+	color: midnightblue;
+	text-transform: capitalize;
 }
 h1{
 	font-family: Time New Roman;
@@ -9,7 +16,4 @@ h1{
 }
 input{
 	border: 1px solid black;
-}
-table tr, td{
-	margin: 20px;
 }

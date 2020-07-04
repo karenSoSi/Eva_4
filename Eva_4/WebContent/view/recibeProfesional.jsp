@@ -55,6 +55,6 @@
 			<td><%= request.getParameter("estado")%></td>
 		</tr>
 	</table>
-	<a href="${pageContext.request.contextPath}/view/registroProfesional.jsp" >Volver</a>
+	<a href="${pageContext.request.contextPath}/view/ingresarProfesional.jsp" >Volver</a>
 </body>
 </html>

@@ -61,7 +61,7 @@
 				</tr>
 			</table>
 			
-			<div><a href="${pageContext.request.contextPath}/index.jsp">Volver</a></div>
+			<div><a href="${pageContext.request.contextPath}/users/administrador.jsp">Volver</a></div>
 		</form>
 	</body>
 </html>

@@ -8,6 +8,10 @@
 		<meta charset="UTF-8">
 		<title>Registro de Accidente</title>
 		<link rel="stylesheet" href="../css/style.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+   		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+   		
+
 		<script>
 	        $(function () {
 	            $("#datepicker").datepicker();
@@ -23,7 +27,7 @@
 		</c:if>
 		
 		
-		<form action="exitoAccidente.jsp" method="post">
+		<form action="${pageContext.request.contextPath}/view/registroAccidente.jsp" method="post">
 		
 			<table>
 			
@@ -59,7 +63,7 @@
 				</tr>
 				<tr>
 					<td>Fecha Accidente</td>
-					<td><input type="text" id="datepicker" name="fecha" required/></td>
+					<td><input type="text" id="datepicker" name="fecha" class="col1" required/></td>
 				</tr>
 				<tr>
 					<td>Descripción</td>
@@ -70,7 +74,7 @@
 				<td><input type="submit" name="enviar" value="Enviar"></td>
 				</tr>
 			</table>
-			<div><a href="${pageContext.request.contextPath}/index.jsp">Volver</a></div>
+			<div><a href="${pageContext.request.contextPath}/users/cliente.jsp">Volver</a></div>
 		</form>
 	
 	</body>

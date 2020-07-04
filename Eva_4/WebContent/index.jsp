@@ -7,18 +7,67 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/styleIndex.css">
 	</head>
 	
 	
 	<body>
 		<h1>Evaluación Grupal Módulo 4</h1>
-	
-		<div><a href="${pageContext.request.contextPath}/view/FormularioAccidente.jsp">Formulario de Registro</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/IngresarCliente.jsp">Registro de Cliente</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/registroProfesional.jsp">Registro de Profesionales</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/registroProfesional.jsp">Visitas</a></div>
 		
+		
+		<table>
+			<tr>
+				<td>
+					<h3>Login Administrador</h3>
+					<c:if test="${lmensaje != null}">
+						<h3><c:out value="${lmensaje}"></c:out></h3>
+					</c:if>
+					
+					<form action="${pageContext.request.contextPath}/users/administrador.jsp" method="post">
+						Nombre: <input type="text" name="txtlogin" /><br/>
+						Clave: <input type="password" name="txtclave" /><br/>
+						<input type="submit" value="Ingresar" />
+					</form>
+				</td>
+				
+				
+				<td>
+					<h3>Login Profesional</h3>
+					<c:if test="${lmensaje != null}">
+						<h3><c:out value="${lmensaje}"></c:out></h3>
+					</c:if>
+					
+					<form action="${pageContext.request.contextPath}/users/profesional.jsp" method="post">
+						Nombre: <input type="text" name="txtlogin" /><br/>
+						Clave: <input type="password" name="txtclave" /><br/>
+						<input type="submit" value="Ingresar" />
+					</form>
+				</td>
+				
+				<td>
+					<h3>Login Cliente</h3>
+					<c:if test="${lmensaje != null}">
+						<h3><c:out value="${lmensaje}"></c:out></h3>
+					</c:if>
+					
+					<form action="${pageContext.request.contextPath}/users/cliente.jsp" method="post">
+						Nombre: <input type="text" name="txtlogin" /><br/>
+						Clave: <input type="password" name="txtclave" /><br/>
+						<input type="submit" value="Ingresar" />
+					</form>
+				</td>
+			</tr>
+			
+		</table>
+				
+		
+		
+			
+		
+		
+		
+		
+	
 		
 	</body>
 </html>
