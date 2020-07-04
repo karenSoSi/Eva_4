@@ -17,6 +17,7 @@
 		<div><a href="${pageContext.request.contextPath}/view/FormularioAccidente.jsp">Formulario de Registro</a></div>
 		<div><a href="${pageContext.request.contextPath}/view/IngresarCliente.jsp">Registro de Cliente</a></div>
 		<div><a href="${pageContext.request.contextPath}/view/registroProfesional.jsp">Registro de Profesionales</a></div>
+		<div><a href="${pageContext.request.contextPath}/view/registroProfesional.jsp">Visitas</a></div>
 		
 		
 	</body>
