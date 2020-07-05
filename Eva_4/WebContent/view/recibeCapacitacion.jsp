@@ -15,6 +15,14 @@
 	<h1>Registro de Capacitacion</h1>
 	<table>
 		<tr>
+			<td><%= "Cliente: "%></td>
+			<td><%= request.getParameter("cliente")%></td>
+		</tr>
+		<tr>
+			<td><%= "Profesional: "%></td>
+			<td><%= request.getParameter("profesional")%></td>
+		</tr>
+		<tr>
 			<td><%= "Fecha: "%></td>
 			<td><%= request.getParameter("fecha")%></td>
 		</tr>
@@ -22,11 +30,6 @@
 		<tr>
 			<td><%= "Hora: "%></td>
 			<td><%= request.getParameter("hora")%></td>
-		</tr>
-
-		<tr>
-			<td><%= "Direccion: "%></td>
-			<td><%= request.getParameter("direccion")%></td>
 		</tr>
 
 		<tr>

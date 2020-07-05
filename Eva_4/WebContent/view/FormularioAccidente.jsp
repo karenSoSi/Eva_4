@@ -32,12 +32,8 @@
 			<table>
 			
 				<tr>
-					<td>Nombre:</td>
+					<td>Nombre Completo:</td>
 					<td><input type="text" name="nombre" required/></td>
-				</tr>
-				<tr>
-					<td>Apellido:</td>
-					<td><input type="text" name="apellido" required/></td>
 				</tr>
 				<tr>
 					<td>Rut:</td>

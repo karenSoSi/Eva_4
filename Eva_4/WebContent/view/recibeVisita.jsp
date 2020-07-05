@@ -15,6 +15,14 @@
 	<h1>Registro de visita</h1>
 	<table>
 		<tr>
+			<td><%= "Cliente: "%></td>
+			<td><%= request.getParameter("cliente")%></td>
+		</tr>
+		<tr>
+			<td><%= "Profesional: "%></td>
+			<td><%= request.getParameter("profesional")%></td>
+		</tr>
+		<tr>
 			<td><%= "Fecha: "%></td>
 			<td><%= request.getParameter("fecha")%></td>
 		</tr>

@@ -17,17 +17,14 @@
 		<form action="recibeCliente.jsp" method="post">
 			<table>
 				<tr>
-					<td>ID:</td>
-					<td><input type="text" name="id" required/></td>
+					<td>Nombre Completo:</td>
+					<td><input type="text" name="nombre" required/></td>
 				</tr>
 				<tr>
 					<td>Rut:</td>
 					<td><input type="text" name="rut" required/></td>
 				</tr>
-				<tr>
-					<td>Nombre Completo:</td>
-					<td><input type="text" name="nombre" required/></td>
-				</tr>
+				
 				<tr>
 					<td>Razón Social:</td>
 					<td><input type="text" name="rSocial" required/></td>
@@ -38,7 +35,7 @@
 				</tr>
 				<tr>
 					<td>Dirección:</td>
-					<td><input type="text" name="dirección" required/></td>
+					<td><input type="text" name="direccion" required/></td>
 				</tr>
 				<tr>
 					<td>Teléfono:</td>

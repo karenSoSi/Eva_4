@@ -26,6 +26,30 @@
 		<form action="${pageContext.request.contextPath}/view/recibeVisita.jsp" method="post">
 			<table>
 				<tr>
+					<td>Cliente:</td>
+					<td>
+						<select name="cliente" required>
+			              	<option> Cliente 1</option>
+			                <option> Cliente 2</option>
+			            	<option> Cliente 3</option>
+			            	<option> Cliente 4</option>
+			                <option> Cliente 5</option>
+			        	</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Profesionales:</td>
+					<td>
+						<select name="profesional" required>
+			              	<option> Profesional 1</option>
+			                <option> Profesional 2</option>
+			            	<option> Profesional 3</option>
+			            	<option> Profesional 4</option>
+			                <option> Profesional 5</option>
+			        	</select>
+					</td>
+				</tr>
+				<tr>
 					<td>Fecha:</td>
 					<td><input type="text" id="datepicker"name="fecha" required/></td>
 				</tr>

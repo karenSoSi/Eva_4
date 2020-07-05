@@ -16,13 +16,8 @@
 		
 		<table>
 			<tr>
-				<td><%= "Nombre: "%></td>
+				<td><%= "Nombre Completo: "%></td>
 				<td><%= request.getParameter("nombre")%></td>
-			</tr>
-			
-			<tr>
-				<td><%= "Apellido: "%></td>
-				<td><%= request.getParameter("apellido")%></td>
 			</tr>
 			
 			<tr>

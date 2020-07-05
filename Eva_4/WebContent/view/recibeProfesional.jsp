@@ -14,9 +14,10 @@
 <body>
 	<h1>Registro de Profesional</h1>
 	<table>
+		
 		<tr>
-			<td><%= "ID: "%></td>
-			<td><%= request.getParameter("id")%></td>
+			<td><%= "Nombre Completo: "%></td>
+			<td><%= request.getParameter("nombre")%></td>
 		</tr>
 
 		<tr>
@@ -25,13 +26,8 @@
 		</tr>
 
 		<tr>
-			<td><%= "Nombre Completo: "%></td>
-			<td><%= request.getParameter("nombre")%></td>
-		</tr>
-
-		<tr>
-			<td><%= "Edad: "%></td>
-			<td><%= request.getParameter("edad")%></td>
+			<td><%= "Fecha Nacimiento: "%></td>
+			<td><%= request.getParameter("fNacimiento")%></td>
 		</tr>
 
 		<tr>

@@ -14,19 +14,14 @@
 <body>
 	<h1>Registro de Cliente</h1>
 	<table>
-		<tr>
-			<td><%= "ID: "%></td>
-			<td><%= request.getParameter("id")%></td>
-		</tr>
-
-		<tr>
-			<td><%= "Rut: "%></td>
-			<td><%= request.getParameter("rut")%></td>
-		</tr>
-
+		
 		<tr>
 			<td><%= "Nombre Completo: "%></td>
 			<td><%= request.getParameter("nombre")%></td>
+		</tr>
+		<tr>
+			<td><%= "Rut: "%></td>
+			<td><%= request.getParameter("rut")%></td>
 		</tr>
 
 		<tr>
