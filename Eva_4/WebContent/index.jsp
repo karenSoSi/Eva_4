@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Login</title>
 		<link rel="stylesheet" href="css/styleIndex.css">
 	</head>
 	
@@ -23,9 +23,9 @@
 						<h3><c:out value="${lmensaje}"></c:out></h3>
 					</c:if>
 					
-					<form action="${pageContext.request.contextPath}/users/administrador.jsp" method="post">
-						Nombre: <input type="text" name="txtlogin" /><br/>
-						Clave: <input type="password" name="txtclave" /><br/>
+					<form action="${pageContext.request.contextPath}/view/usuarioAdministrador.jsp" method="post">
+						Nombre: <input type="text" name="usuario" /><br/>
+						Clave: <input type="password" name="clave" /><br/>
 						<input type="submit" value="Ingresar" />
 					</form>
 				</td>
@@ -37,9 +37,9 @@
 						<h3><c:out value="${lmensaje}"></c:out></h3>
 					</c:if>
 					
-					<form action="${pageContext.request.contextPath}/users/profesional.jsp" method="post">
-						Nombre: <input type="text" name="txtlogin" /><br/>
-						Clave: <input type="password" name="txtclave" /><br/>
+					<form action="${pageContext.request.contextPath}/view/usuarioProfesional.jsp" method="post">
+						Nombre: <input type="text" name="usuario" /><br/>
+						Clave: <input type="password" name="clave" /><br/>
 						<input type="submit" value="Ingresar" />
 					</form>
 				</td>
@@ -50,9 +50,9 @@
 						<h3><c:out value="${lmensaje}"></c:out></h3>
 					</c:if>
 					
-					<form action="${pageContext.request.contextPath}/users/cliente.jsp" method="post">
-						Nombre: <input type="text" name="txtlogin" /><br/>
-						Clave: <input type="password" name="txtclave" /><br/>
+					<form action="${pageContext.request.contextPath}/view/usuarioCliente.jsp" method="post">
+						Nombre: <input type="text" name="usuario" /><br/>
+						Clave: <input type="password" name="clave" /><br/>
 						<input type="submit" value="Ingresar" />
 					</form>
 				</td>
