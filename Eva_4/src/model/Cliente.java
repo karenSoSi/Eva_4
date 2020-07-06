@@ -1,22 +1,40 @@
 package model;
 
 public class Cliente {
-	
+
 	private int idCliente;
 	private String rutCliente;
+	private String nombreCliente;
+	private String razonSocial;
+	private String giro;
+	private String dirCliente;
+	private String fonoCliente;
+	private String mailCliente;
+	private String rubro;
+	private int estadoCliente;
+
 	
-	
-	
-	public Cliente(int idCliente, String rutCliente) {
+	public Cliente(String rutCliente, String nombreCliente, String razonSocial, String giro,
+			String dirCliente, String fonoCliente, String mailCliente, String rubro) {
+		
 		super();
-		this.idCliente = idCliente;
+
 		this.rutCliente = rutCliente;
+		this.nombreCliente = nombreCliente;
+		this.razonSocial = razonSocial;
+		this.giro = giro;
+		this.dirCliente = dirCliente;
+		this.fonoCliente = fonoCliente;
+		this.mailCliente = mailCliente;
+		this.rubro = rubro;
+
 	}
-	public int getIdCliente() {
+	
+	public int getId() {
 		return idCliente;
 	}
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setId(int id) {
+		this.idCliente = id;
 	}
 	public String getRutCliente() {
 		return rutCliente;
@@ -24,7 +42,64 @@ public class Cliente {
 	public void setRutCliente(String rutCliente) {
 		this.rutCliente = rutCliente;
 	}
+	public String getNombreCliente() {
+		return nombreCliente;
+	}
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
+	}
+	public String getRazonSocial() {
+		return razonSocial;
+	}
+	public void setRazonSocial(String razonSocial) {
+		this.razonSocial = razonSocial;
+	}
+	public String getGiro() {
+		return giro;
+	}
+	public void setGiro(String giro) {
+		this.giro = giro;
+	}
+	public String getDirCliente() {
+		return dirCliente;
+	}
+	public void setDirCliente(String dirCliente) {
+		this.dirCliente = dirCliente;
+	}
+	public String getFonoCliente() {
+		return fonoCliente;
+	}
+	public void setFonoCliente(String fonoCliente) {
+		this.fonoCliente = fonoCliente;
+	}
+	public String getMailCliente() {
+		return mailCliente;
+	}
+	public void setMailCliente(String mailCliente) {
+		this.mailCliente = mailCliente;
+	}
+	public String getRubro() {
+		return rubro;
+	}
+	public void setRubro(String rubro) {
+		this.rubro = rubro;
+	}
+	public int getEstadoCliente() {
+		return estadoCliente;
+	}
+	public void setEstadoCliente(int estadoCliente) {
+		this.estadoCliente = estadoCliente;
+	}
 
-	//falta agregar el resto
+	@Override
+	public String toString() {
+		return "Cliente [id=" + idCliente + ", rutCliente=" + rutCliente + ", nombreCliente=" + nombreCliente
+				+ ", razonSocial=" + razonSocial + ", giro=" + giro + ", dirCliente=" + dirCliente
+				+ ", fonoCliente=" + fonoCliente + ", mailCliente=" + mailCliente + ", rubro=" + rubro
+				+ ", estadoCliente=" + estadoCliente + "]";
+	}
+	
+	
 
+	
 }

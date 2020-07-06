@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Datos de Profesional</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/styleMostrar.css">
 </head>
 
 
@@ -16,41 +16,34 @@
 	<table>
 		
 		<tr>
-			<td><%= "Nombre Completo: "%></td>
-			<td><%= request.getParameter("nombre")%></td>
+			<td>Rut: </td>
+			<td><c:out value="${profesional.getRutProfesional()}"/></td>
+		</tr>
+		<tr>
+			<td>Nombre Completo: </td>
+			<td><c:out value="${profesional.getNombreProfesional()}"/></td>
 		</tr>
 
 		<tr>
-			<td><%= "Rut: "%></td>
-			<td><%= request.getParameter("rut")%></td>
-		</tr>
+				<td>Dirección: </td>
+				<td><c:out value="${profesional.getDirProfesional()}"/></td>
+			</tr>
 
 		<tr>
-			<td><%= "Fecha Nacimiento: "%></td>
-			<td><%= request.getParameter("fNacimiento")%></td>
-		</tr>
+				<td>Teléfono: </td>
+				<td><c:out value="${profesional.getFonoProfesional()}"/></td>
+			</tr>
 
-		<tr>
-			<td><%= "Dirección: "%></td>
-			<td><%= request.getParameter("direccion")%></td>
-		</tr>
-
-		<tr>
-			<td><%= "Teléfono: "%></td>
-			<td><%= request.getParameter("telefono")%></td>
-		</tr>
-
-		<tr>
-			<td><%= "Correo: "%></td>
-			<td><%= request.getParameter("correo")%></td>
-		</tr>
+			<tr>
+				<td>Correo Electrónico: </td>
+				<td><c:out value="${profesional.getMailrProfesional()}"/></td>
+			</tr>
 		
 
-		<tr>
-			<td><%= "Estado: "%></td>
-			<td><%= request.getParameter("estado")%></td>
-		</tr>
+		
+
 	</table>
-	<a href="${pageContext.request.contextPath}/view/ingresarProfesional.jsp" >Volver</a>
+		<br>
+		<a href="${pageContext.request.contextPath}/users/administrador.jsp" >Volver</a>
 </body>
 </html>

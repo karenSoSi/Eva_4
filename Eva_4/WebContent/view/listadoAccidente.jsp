@@ -6,52 +6,52 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link rel="stylesheet" href="../css/style.css">
+		<title>Lista de Accidente</title>
+		<link rel="stylesheet" href="../css/styleListado.css">
 	</head>
 	
 	
 	<body>
-		<h1>Formulario de Accidente</h1>
+		<h1>Lista de Accidente</h1>
 		
-		<table>
-			<tr>
-				<td><%= "Nombre Completo: "%></td>
-				<td><%= request.getParameter("nombre")%></td>
-			</tr>
+			<table>
+		<tr>
 			
+			<th>Nombre Completo</th>
+			<th>Rut</th>
+			<th>Teléfono</th>
+			<th>Correo Electrónico</th>
+			<th>Tipo de Accidente</th>
+			<th>Fecha de Accidente</th>
+			<th>Hora de Accidente</th>
+			<th>Descripción</th>
+		</tr>
+
+		<c:forEach items="${lista_accidente}" var="accidente">
 			<tr>
-				<td><%= "Rut: "%></td>
-				<td><%= request.getParameter("rut")%></td>
+				<td>${cliente.getNombreCliente()}</td>
+				<td>${cliente.getRutCliente()}</td>
+				<td>${cliente.getFonoCliente()}</td>
+				<td>${cliente.getMailCliente()}</td>
+				<td>${cliente.getTipoAccidente()}</td>
+				<td>${cliente.getFechaAccidente()}</td>
+				<td>${cliente.gethoraAccidente()}</td>
+				<td>${cliente.getDescripcion()}</td>
+				
+				
+				<td>
+					<a href="${pageContext.request.contextPath}/AdminProfesional?action=eliminar">Eliminar</a>
+					&nbsp; 
+					<a href="${pageContext.request.contextPath}/AdminProfesional?id=actualizar">Actualizar</a>
+				</td>
+				
 			</tr>
-			
-			<tr>
-				<td><%= "Teléfono: "%></td>
-				<td><%= request.getParameter("telefono")%></td>
-			</tr>
-			
-			<tr>
-				<td><%= "Correo: "%></td>
-				<td><%= request.getParameter("correo")%></td>
-			</tr>
-			
-			<tr>
-				<td><%= "Tipo de Accidente: "%></td>
-				<td><%= request.getParameter("accidente")%></td>
-			</tr>
-			
-			<tr>
-				<td><%= "Fecha de Accidente: "%></td>
-				<td><%= request.getParameter("fecha")%></td>
-			</tr>
-			
-			<tr>
-				<td><%= "Descripción: "%></td>
-				<td><%= request.getParameter("descripcion")%></td>
-			</tr>
-		</table>
+		</c:forEach>
+
+	</table>
 		
-		<a href="${pageContext.request.contextPath}/view/FormularioAccidente.jsp" >Volver</a>
+		<br>
+		<a href="${pageContext.request.contextPath}/users/administrador.jsp" >Volver</a>
 		
 	</body>
 </html>

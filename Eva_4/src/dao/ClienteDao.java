@@ -1,11 +1,12 @@
 package dao;
 
-import connection.Conexion;
 import idao.IClienteDao;
 import model.Cliente;
 
 import java.sql.*;
 import java.util.*;
+
+import connection.Conexion;
 
 public class ClienteDao implements IClienteDao {
 
@@ -18,14 +19,46 @@ public class ClienteDao implements IClienteDao {
 
 	@Override
 	public boolean crearCliente(Cliente nuevoCliente) throws SQLException {
-		String sql = "INSERT INTO Cliente (region_id, region_name) VALUES (?, ?)";
+
+		int nextID = 1;
+		int estadoCliente = 1;
+
+		String sqlNextVal = "SELECT MAX(ID_CLIENTE) FROM CLIENTE";
 
 		con.conectar();
 
 		connection = con.getJdbcConnection();
 
-		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setInt(1, nuevoCliente.getIdCliente());// datos de clase model.Cliente
+		PreparedStatement statement = connection.prepareStatement(sqlNextVal);
+
+		ResultSet rs = statement.executeQuery(sqlNextVal);
+
+		if (rs.next()) {
+
+			nextID = rs.getInt("id_cliente");
+
+			nextID += 1;
+
+		}
+
+		rs.close();
+
+		String sqlInsert = "INSERT INTO Cliente (id_cliente, rut_cliente, nombre_cliente, razon_social,"
+				+ "giro, direccion_cliente, fono_cliente, mail_cliente, rubro, estado_cliente) " + "VALUES ("
+				+ "? , ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+		statement = connection.prepareStatement(sqlInsert);
+
+		statement.setInt(1, nextID);
+		statement.setString(2, nuevoCliente.getRutCliente());
+		statement.setString(3, nuevoCliente.getNombreCliente());
+		statement.setString(4, nuevoCliente.getRazonSocial());
+		statement.setString(5, nuevoCliente.getGiro());
+		statement.setString(6, nuevoCliente.getDirCliente());
+		statement.setString(7, nuevoCliente.getFonoCliente());
+		statement.setString(8, nuevoCliente.getMailCliente());
+		statement.setString(9, nuevoCliente.getRubro());
+		statement.setInt(10, estadoCliente);
 
 		boolean filasInsertadas = statement.executeUpdate() > 0;
 
@@ -34,22 +67,25 @@ public class ClienteDao implements IClienteDao {
 	}
 
 	@Override
-	public Cliente obtenerPorID(int id) throws SQLException {
+	public Cliente obtenerPorRut(String rut) throws SQLException {
 		Cliente cliente = null;
 
-		String sql = "SELECT region_id, region_name FROM Cliente WHERE region_id = ?";
+		String sql = "SELECT rut_cliente, nombre_cliente, razon_social, giro, direccion_cliente, fono_cliente, "
+				+ "mail_cliente, rubro from cliente WHERE rut_cliente = ?";
 		con.conectar();
 		connection = con.getJdbcConnection();
 
 		PreparedStatement statement = connection.prepareStatement(sql);
-		statement.setInt(1, id);
+
+		statement.setString(2, rut);
 
 		ResultSet res = statement.executeQuery();
 
 		if (res.next()) {
-			cliente = new Cliente(res.getInt("idCliente"), res.getString("rutCliente"));
+			cliente = new Cliente(res.getString(2), res.getString(3), res.getString(4), res.getString(5),
+					res.getString(6), res.getString(7), res.getString(8), res.getString(9));
 		}
-		res.close();
+
 		con.desconectar();
 
 		return cliente;
@@ -57,24 +93,45 @@ public class ClienteDao implements IClienteDao {
 
 	@Override
 	public List<Cliente> listarClientes() throws SQLException {
-		List<Cliente> listaCliente = new ArrayList<Cliente>();
 
-		String sql = "SELECT region_id, region_name FROM Cliente";
+		System.out.println("inicio metodo listarClientes()");
 
-		con.conectar();
-		connection = con.getJdbcConnection();
-		Statement statement = connection.createStatement();
+		List<Cliente> listaClientes = new ArrayList<Cliente>();
 
-		ResultSet rs = statement.executeQuery(sql);
+		System.out.println("Objeto array list creado");
 
-		while (rs.next()) {
-			Cliente r = new Cliente(rs.getInt("region_id"), rs.getString("region_name"));
-			listaCliente.add(r);
+		String sql = "SELECT * from cliente order by nombre_cliente asc ";
+
+		System.out.println(sql); // LLEGA HASTA AQUI
+
+		try {
+
+			con.conectar();
+
+			System.out.println("conexion a BD OK");
+
+			connection = con.getJdbcConnection();
+
+			System.out.println(connection);
+
+			Statement statement = connection.createStatement();
+
+			ResultSet res = statement.executeQuery(sql);
+
+			while (res.next()) {
+				Cliente r = new Cliente(res.getString(2), res.getString(3), res.getString(4), res.getString(5),
+						res.getString(6), res.getString(7), res.getString(8), res.getString(9));
+				listaClientes.add(r);
+			}
+
+			con.desconectar();
+
+		} catch (SQLException e) {
+			System.out.println("Error: Clase ClienteDao, m�todo ListarClientes");
+			e.printStackTrace();
 		}
 
-		con.desconectar();
-
-		return listaCliente;
+		return listaClientes;
 
 	}
 

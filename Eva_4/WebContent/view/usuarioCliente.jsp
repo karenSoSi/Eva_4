@@ -6,7 +6,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Crear Usuario</title>
-	<link rel="stylesheet" href="css/styleIndex.css">
+	<link rel="stylesheet" href="../css/styleIndex.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 	</head>
 	
 	<body>
@@ -20,9 +21,12 @@
           
         
         <%if(snr.validar("Cliente", "C1234")){%> 
-            Bienvenido <a href="${pageContext.request.contextPath}/users/cliente.jsp">Ingresar</a>
+            <div class="col4">Bienvenido 
+            <br><a href="${pageContext.request.contextPath}/users/cliente.jsp">Ingresar</a></div>
         <%}else{%> 
-            Error! Usuario Invalido<br/> 
+            <div class="col4"> Error! Usuario Invalido<br/> 
+            <br>
+            <a href="${pageContext.request.contextPath}/index.jsp">Volver</a> </div>
         <%}%>   
 	</body>
 </html>

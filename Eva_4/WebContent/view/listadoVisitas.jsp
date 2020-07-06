@@ -6,42 +6,44 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Datos de Visita</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<title>Lista de Visita</title>
+	<link rel="stylesheet" href="../css/styleListado.css">
 </head>
 
 
 <body>
-	<h1>Registro de visita</h1>
-	<table>
+	<h1>Listado de Visita</h1>
+	
+			<table>
 		<tr>
-			<td><%= "Cliente: "%></td>
-			<td><%= request.getParameter("cliente")%></td>
-		</tr>
-		<tr>
-			<td><%= "Profesional: "%></td>
-			<td><%= request.getParameter("profesional")%></td>
-		</tr>
-		<tr>
-			<td><%= "Fecha: "%></td>
-			<td><%= request.getParameter("fecha")%></td>
+			<th>Cliente</th>
+			<th>Profesional</th>
+			<th>Fecha Visita</th>
+			<th>Hora Visita</th>
+			<th>Asistentes</th>
+			<th>Lista Chequeo</th>
 		</tr>
 
-		<tr>
-			<td><%= "Hora: "%></td>
-			<td><%= request.getParameter("hora")%></td>
-		</tr>
+		<c:forEach items="${lista_visita}" var="visita">
+			<tr>
+				<td>${cliente.getCliente()}</td>
+				<td>${cliente.getProfesional()}</td>
+				<td>${cliente.getFechaVisita()}</td>
+				<td>${cliente.getAsistentes()}</td>
+				<td>${cliente.getListaChequeo()}</td>
 
-		<tr>
-			<td><%= "Dirección: "%></td>
-			<td><%= request.getParameter("direccion")%></td>
-		</tr>
+				<td>
+					<a href="${pageContext.request.contextPath}/AdminProfesional?action=eliminar">Eliminar</a>
+					&nbsp; 
+					<a href="${pageContext.request.contextPath}/AdminProfesional?id=actualizar">Actualizar</a>
+				</td>
+			</tr>
+		</c:forEach>
 
-		<tr>
-			<td><%= "Lista De Chequeo: "%></td>
-			<td><%= request.getParameter("listadechequeo")%></td>
-		</tr>
 	</table>
-	<a href="${pageContext.request.contextPath}/view/formularioVisita.jsp" >Volver</a>
+	
+	<br>
+	<a href="${pageContext.request.contextPath}/users/administrador.jsp" >Volver</a>
+
 </body>
 </html>

@@ -6,42 +6,44 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Datos de Capacitacion</title>
-	<link rel="stylesheet" href="../css/style.css">
+	<title>Lista de Capacitación</title>
+	<link rel="stylesheet" href="../css/styleListado.css">
 </head>
 
 
 <body>
-	<h1>Registro de Capacitacion</h1>
-	<table>
+	<h1>Lista de Capacitación</h1>
+	
+		<table>
 		<tr>
-			<td><%= "Cliente: "%></td>
-			<td><%= request.getParameter("cliente")%></td>
-		</tr>
-		<tr>
-			<td><%= "Profesional: "%></td>
-			<td><%= request.getParameter("profesional")%></td>
-		</tr>
-		<tr>
-			<td><%= "Fecha: "%></td>
-			<td><%= request.getParameter("fecha")%></td>
+			<th>Cliente</th>
+			<th>Profesional</th>
+			<th>Fecha Capacitación</th>
+			<th>Hora Capacitación</th>
+			<th>Asistentes</th>
+			<th>Tema</th>
 		</tr>
 
-		<tr>
-			<td><%= "Hora: "%></td>
-			<td><%= request.getParameter("hora")%></td>
-		</tr>
+		<c:forEach items="${lista_capacitacion}" var="capacitacion">
+			<tr>
+				<td>${cliente.getCliente()}</td>
+				<td>${cliente.getProfesional()}</td>
+				<td>${cliente.getFechaCapacitacion()}</td>
+				<td>${cliente.getHoraCapacitacion()}</td>
+				<td>${cliente.getAsistentes()}</td>
+				<td>${cliente.getTema()}</td>
 
-		<tr>
-			<td><%= "Asistentes: "%></td>
-			<td><%= request.getParameter("asistentes")%></td>
-		</tr>
+				<td>
+					<a href="${pageContext.request.contextPath}/AdminProfesional?action=eliminar">Eliminar</a>
+					&nbsp; 
+					<a href="${pageContext.request.contextPath}/AdminProfesional?id=actualizar">Actualizar</a>
+				</td>
+			</tr>
+		</c:forEach>
 
-		<tr>
-			<td><%= "Tema: "%></td>
-			<td><%= request.getParameter("tema")%></td>
-		</tr>
 	</table>
-	<a href="${pageContext.request.contextPath}/view/formularioCapacitacion.jsp" >Volver</a>
+	
+	<br>
+	<a href="${pageContext.request.contextPath}/users/administrador.jsp" >Volver</a>
 </body>
 </html>

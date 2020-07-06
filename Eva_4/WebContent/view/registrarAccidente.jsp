@@ -8,15 +8,48 @@
 		<meta charset="UTF-8">
 		<title>Registro de Accidente</title>
 		<link rel="stylesheet" href="../css/style.css">
+		
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		
+		<!-- datepicker sources -->
 		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
    		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
    		
+   		
+    	<!-- timepicker sources -->
+    	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    	<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
-		<script>
-	        $(function () {
-	            $("#datepicker").datepicker();
-	        });
+	    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+    				firstDay: 1,
+    				monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+    					'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    				monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
+    						'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    				dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+    				dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié;', 'Juv', 'Vie', 'Sáb'],
+    				dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+    				weekHeader: 'Sm',
+    				dateFormat: 'dd/mm/yy',
+            });
+            
+            $('#timepicker').timepicker({
+	                timeFormat: 'H:mm',
+	                interval: 30,
+	                minTime: '0',
+	                maxTime: '23:30',
+	                defaultTime: '0',
+	                startTime: '0',
+	                dynamic: false,
+	                dropdown: true,
+	                scrollbar: true
+            });
+        });
     	</script>
+    	
+    	
 	</head>
 	
 	<body>
@@ -27,7 +60,7 @@
 		</c:if>
 		
 		
-		<form action="${pageContext.request.contextPath}/view/registroAccidente.jsp" method="post">
+		<form action="${pageContext.request.contextPath}/AdminAccidente?action=crear" method="post">
 		
 			<table>
 			
@@ -51,15 +84,20 @@
 					<td>Tipo de Accidente</td>
 					<td>
 						<select name="accidente" required>
-			              	<option> Grave</option>
+			              	<option> Leve</option>
 			                <option> Medio</option>
-			            	<option> Leve</option>
+			            	<option> Grave</option>
+			            	<option> Mortal</option>
 			        	</select>
 					</td>
 				</tr>
 				<tr>
 					<td>Fecha Accidente</td>
 					<td><input type="text" id="datepicker" name="fecha" class="col1" required/></td>
+				</tr>
+				<tr>
+					<td>Hora Accidente</td>
+					<td><input type="text" id="timepicker" autocomplete="off" name="hora" required/></td>
 				</tr>
 				<tr>
 					<td>Descripción</td>
@@ -70,6 +108,7 @@
 				<td><input type="submit" name="enviar" value="Enviar"></td>
 				</tr>
 			</table>
+			<br>
 			<div><a href="${pageContext.request.contextPath}/users/cliente.jsp">Volver</a></div>
 		</form>
 	

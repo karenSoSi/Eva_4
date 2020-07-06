@@ -6,17 +6,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link rel="stylesheet" href="css/style.css">
+		<title>Bienvenido</title>
+		<link rel="stylesheet" href="../css/style.css">
 	</head>
 	
 	
 	<body>
-		<h1>Evaluación Grupal Módulo 4</h1>
+		<h1>Profesional</h1>
 		
 	
-		<div><a href="${pageContext.request.contextPath}/view/formularioCapacitacion.jsp">Formulario de Capacitación</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/formularioVisita.jsp">Formulario de Visita</a></div>
+		<div><a href="${pageContext.request.contextPath}/view/registrarCapacitacion.jsp">Formulario de Capacitación</a></div>
+		<div><a href="${pageContext.request.contextPath}/view/registrarVisita.jsp">Formulario de Visita</a></div>
 		
 		
 	</body>

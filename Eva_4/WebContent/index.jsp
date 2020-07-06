@@ -15,10 +15,9 @@
 		<h1>Evaluación Grupal Módulo 4</h1>
 		
 		
-		<table>
-			<tr>
-				<td>
-					<h3>Login Administrador</h3>
+		
+		<div class="col1">
+			<h3>Login Administrador</h3>
 					<c:if test="${lmensaje != null}">
 						<h3><c:out value="${lmensaje}"></c:out></h3>
 					</c:if>
@@ -28,11 +27,11 @@
 						Clave: <input type="password" name="clave" /><br/>
 						<input type="submit" value="Ingresar" />
 					</form>
-				</td>
-				
-				
-				<td>
-					<h3>Login Profesional</h3>
+		</div>
+		
+		
+		<div class="col2">
+			<h3>Login Profesional</h3>
 					<c:if test="${lmensaje != null}">
 						<h3><c:out value="${lmensaje}"></c:out></h3>
 					</c:if>
@@ -42,9 +41,9 @@
 						Clave: <input type="password" name="clave" /><br/>
 						<input type="submit" value="Ingresar" />
 					</form>
-				</td>
-				
-				<td>
+		</div>
+		
+		<div class="col3">
 					<h3>Login Cliente</h3>
 					<c:if test="${lmensaje != null}">
 						<h3><c:out value="${lmensaje}"></c:out></h3>
@@ -55,14 +54,10 @@
 						Clave: <input type="password" name="clave" /><br/>
 						<input type="submit" value="Ingresar" />
 					</form>
-				</td>
-			</tr>
-			
-		</table>
-				
+		
+		</div>
 		
 		
-			
 		
 		
 		

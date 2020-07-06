@@ -6,16 +6,16 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<link rel="stylesheet" href="css/style.css">
+		<title>Cliente</title>
+		<link rel="stylesheet" href="../css/style.css">
 	</head>
 	
 	
 	<body>
-		<h1>Evaluación Grupal Módulo 4</h1>
+		<h1>Cliente</h1>
 		
 	
-		<div><a href="${pageContext.request.contextPath}/view/FormularioAccidente.jsp">Registro de Accidente</a></div>
+		<div><a href="${pageContext.request.contextPath}/view/registrarAccidente.jsp">Registro de Accidente</a></div>
 		
 		
 	</body>
