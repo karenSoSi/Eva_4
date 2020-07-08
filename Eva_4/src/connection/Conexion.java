@@ -11,18 +11,22 @@ public class Conexion {
 	private String jdbcURL;
 	private String jdbcUsername;
 	private String jdbcPassword;
+	private String jdbcDriver;
 
-	public Conexion(String jdbcURL, String jdbcUsername, String jdbcPassword) {
+	public Conexion(String jdbcURL, String jdbcDriver, String jdbcUsername, String jdbcPassword) {
 		super();
 		this.jdbcURL = jdbcURL;
 		this.jdbcUsername = jdbcUsername;
 		this.jdbcPassword = jdbcPassword;
+		this.jdbcDriver = jdbcDriver;
 
 	}
 
-	public void conectar() throws SQLException {
+	public void conectar() throws SQLException, ClassNotFoundException {
 
+		Class.forName(jdbcDriver);
 		if (jdbcConnection == null || jdbcConnection.isClosed()) {
+		
 			jdbcConnection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		}
 

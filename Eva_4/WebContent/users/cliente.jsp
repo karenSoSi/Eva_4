@@ -14,9 +14,10 @@
 	<body>
 		<h1>Cliente</h1>
 		
-	
-		<div><a href="${pageContext.request.contextPath}/view/registrarAccidente.jsp">Registro de Accidente</a></div>
-		
+			<h3>Accidentes</h3>
+			
+			<div><a href="${pageContext.request.contextPath}/view/registrarAccidente.jsp">Registro de Accidente</a></div>
+			
 		
 	</body>
 </html>

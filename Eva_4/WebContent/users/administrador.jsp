@@ -15,26 +15,27 @@
 		<h1>Administrador</h1>
 		
 		<h3>Clientes</h3>
-		<div><a href="${pageContext.request.contextPath}/view/registrarCliente.jsp">Ingreso de Cliente</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/listadoClientes.jsp">Listado de Clientes</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/mostrarClientePorRut.jsp">Mostrar Cliente por Rut</a></div>
+		<div><a href="${pageContext.request.contextPath}/view/registrarCliente.jsp">Nuevo Cliente</a></div>
+		<div><a href="${pageContext.request.contextPath}/AdminCliente?action=listar">Listado de Clientes</a></div>
 		
 		<h3>Profesionales</h3>
-		<div><a href="${pageContext.request.contextPath}/view/registrarProfesional.jsp">Ingreso de Profesionales</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/listadoProfesionales.jsp">Listado de Profesionales</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/mostrarProfesionalPorRut.jsp">Mostrar Profesional por Rut</a></div>
+		<div><a href="${pageContext.request.contextPath}/view/registrarProfesional.jsp">Nuevo Profesional</a></div>
+		<div><a href="${pageContext.request.contextPath}/AdminProfesional?action=listar">Listado de Profesionales</a></div>
 		
 		<h3>Accidentes</h3>
 		<div><a href="${pageContext.request.contextPath}/view/registrarAccidente.jsp">Registro de Accidente</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/listadoAccidente.jsp">Listado de Accidente</a></div>
+		<div><a href="${pageContext.request.contextPath}/AdminAccidente?action=listar">Listado de Accidente</a></div>
 		
 		<h3>Capacitaciones</h3>
 		<div><a href="${pageContext.request.contextPath}/view/registrarCapacitacion.jsp">Registro de Capacitaciones</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/listadoCapacitaciones.jsp">Listado de Capacitaciones</a></div>
+		<div><a href="${pageContext.request.contextPath}/AdminCliente?action=listar">Listado de Capacitaciones</a></div>
 		
 		<h3>Visitas</h3>
 		<div><a href="${pageContext.request.contextPath}/view/registrarVisita.jsp">Registro de Visita</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/listadoVisitas.jsp">Listado de Visitas</a></div>
+		<div><a href="${pageContext.request.contextPath}/AdminCliente?action=listar">Listado de Visitas</a></div>
+		
+
+	
 		
 		
 		

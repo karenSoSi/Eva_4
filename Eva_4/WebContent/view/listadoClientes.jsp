@@ -6,12 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Listado de Clientes</title>
-<link rel="stylesheet" href="../css/styleListado.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleListado.css">
 </head>
 <body>
 
 	<h1>Listado de Clientes</h1>
 
+	<c:if test="${alerta != null}">
+		<script>
+			var message = "${alerta}";
+			alert(message);
+		</script>
+	</c:if>
+	
 	<table>
 		<tr>
 			<th>Rut</th>
@@ -35,21 +42,26 @@
 				<td>${cliente.getMailCliente()}</td>
 				<td>${cliente.getRubro()}</td>
 				
-				<td>
-					<a href="${pageContext.request.contextPath}/AdminCliente?action=eliminar">Eliminar</a>
-					&nbsp; 
-					<a href="${pageContext.request.contextPath}/AdminCliente?id=actualizar">Actualizar</a>
-				</td>
+				<td><a
+					href="${pageContext.request.contextPath}/AdminCliente?action=eliminar&id=${cliente.getRutCliente()}"><img
+						src="${pageContext.request.contextPath}/img/eliminar.jpg" width=30pt
+						height=30pt></a> &nbsp; 
+						<a href="${pageContext.request.contextPath}/AdminCliente?action=mostrarPorRut&id=${cliente.getRutCliente()}"><img
+						src="${pageContext.request.contextPath}/img/editar.jpg"  width=30pt height=30pt></a></td>
 
-				
+
 			</tr>
 		</c:forEach>
 
 	</table>
 	<br>
-	<div><a href="${pageContext.request.contextPath}/users/administrador.jsp">Volver</a></div>
-	<div><a href="${pageContext.request.contextPath}/view/registrarCliente.jsp">Nuevo Usuario</a></div>
-
+	<div>
+		<a href="${pageContext.request.contextPath}/users/administrador.jsp">Volver</a>
+	</div>
+	<div>
+		<a href="${pageContext.request.contextPath}/view/registrarCliente.jsp">Nuevo
+			Usuario</a>
+	</div>
 
 </body>
 </html>

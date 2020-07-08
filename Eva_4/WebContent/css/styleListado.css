@@ -22,10 +22,11 @@ h1{
 input{
 	border: 1px solid black;
 }
-tr, th, td{
+tr, td{
 	border: 1px solid black;
 	padding: 10px;
 	width: auto;
+	background-color:white;
 	
 }
 
@@ -36,6 +37,9 @@ table {
 }
 
 th{
+	border: 1px solid black;
+	padding: 10px;
+	width: auto;
 	background-color: rgb(206, 206, 206);
 	color: black;
 }

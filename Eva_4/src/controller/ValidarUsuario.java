@@ -1,8 +1,7 @@
 package controller;
 
-import java.io.Serializable;
 
-public class ValidarUsuario implements Serializable{
+public class ValidarUsuario{
 	
 	private String usuario;
 	private String clave;

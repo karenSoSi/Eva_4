@@ -12,18 +12,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.ClienteDao;
-import idao.IClienteDao;
-import model.Cliente;
+import dao.ProfesionalDao;
+import idao.IProfesionalDao;
+import model.Profesional;
 
 /**
- * Servlet implementation class AdminCliente
+ * Servlet implementation class AdminProfesional
  */
-@WebServlet("/AdminCliente")
-public class AdminCliente extends HttpServlet {
+@WebServlet("/AdminProfesional")
+public class AdminProfesional extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	IClienteDao clienteDAO;
+	IProfesionalDao ProfesionalDAO;
 
 	public void init() {
 		String jdbcUrl = getServletContext().getInitParameter("jdbcURL");
@@ -32,7 +32,7 @@ public class AdminCliente extends HttpServlet {
 		String jdbcDriver = getServletContext().getInitParameter("jdbcDriver");
 
 		try {
-			clienteDAO = new ClienteDao(jdbcUrl, jdbcDriver, jdbcUsername, jdbcPassword);
+			ProfesionalDAO = new ProfesionalDao(jdbcUrl, jdbcDriver, jdbcUsername, jdbcPassword);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -41,7 +41,7 @@ public class AdminCliente extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public AdminCliente() {
+	public AdminProfesional() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -63,7 +63,7 @@ public class AdminCliente extends HttpServlet {
 				index(request, response);
 				break;
 			case "listar":
-				mostrarCliente(request, response);
+				mostrarProfesional(request, response);
 				break;
 			case "mostrarPorRut":
 				mostrarPorRut(request, response);
@@ -102,45 +102,42 @@ public class AdminCliente extends HttpServlet {
 
 	}
 
-	// CREAR CLIENTE
+	// CREAR Profesional
 	private void crear(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException, ClassNotFoundException {
 
 		String rut = request.getParameter("rut");
 		String nombre = request.getParameter("nombre");
-		String rSocial = request.getParameter("rSocial");
-		String giro = request.getParameter("giro");
 		String direccion = request.getParameter("direccion");
 		String telefono = request.getParameter("telefono");
 		String correo = request.getParameter("correo");
-		String rubro = request.getParameter("rubro");
 
-		Cliente cliente = new Cliente(rut, nombre, rSocial, giro, direccion, telefono, correo, rubro);
+		Profesional Profesional = new Profesional(rut, nombre, direccion, telefono, correo);
 
-		boolean crear = clienteDAO.crearCliente(cliente);
+		boolean crear = ProfesionalDAO.crearProfesional(Profesional);
 
 		String mensaje = "";
 
 		if (crear)
-			mensaje = "El cliente ha sido creado exitosamente";
+			mensaje = "El Profesional ha sido creado exitosamente";
 		else
-			mensaje = "Ocurrió un error al crear el cliente";
+			mensaje = "Ocurrió un error al crear el Profesional";
 
 		request.setAttribute("alerta", mensaje);
-		request.getRequestDispatcher("/view/registrarCliente.jsp").forward(request, response);
+		request.getRequestDispatcher("/view/registrarProfesional.jsp").forward(request, response);
 	}
 
-	// LISTAR CLIENTES
-	private void mostrarCliente(HttpServletRequest request, HttpServletResponse response)
+	// LISTAR ProfesionalS
+	private void mostrarProfesional(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException, ClassNotFoundException {
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/listadoClientes.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/listadoProfesionales.jsp");
 
-		List<Cliente> lClientes = new ArrayList<Cliente>();
+		List<Profesional> lProfesionales = new ArrayList<Profesional>();
 
-		lClientes = clienteDAO.listarClientes();
+		lProfesionales = ProfesionalDAO.listarProfesionales();
 
-		request.setAttribute("lista_clientes", lClientes);
+		request.setAttribute("lista_profesional", lProfesionales);
 
 		dispatcher.forward(request, response);
 
@@ -151,43 +148,39 @@ public class AdminCliente extends HttpServlet {
 			throws SQLException, ServletException, IOException, ClassNotFoundException {
 
 		String rut = request.getParameter("id");
-		Cliente cliente = clienteDAO.obtenerPorRut(rut);
-		request.setAttribute("cliente", cliente);
-		request.getRequestDispatcher("/view/mostrarClientePorRut.jsp").forward(request, response);
+		Profesional profesional = ProfesionalDAO.obtenerPorRut(rut);
+		request.setAttribute("profesional", profesional);
+		request.getRequestDispatcher("/view/mostrarProfesionalPorRut.jsp").forward(request, response);
 
 	}
 
-	// ACTUALIZAR CLIENTE
+	// ACTUALIZAR Profesional
 	private void actualizar(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException, ClassNotFoundException {
 
 		String rut = request.getParameter("rut");
-		System.out.println("rut:"+ rut);
 		String nombre = request.getParameter("nombre");
-		String rSocial = request.getParameter("rSocial");
-		String giro = request.getParameter("giro");
 		String direccion = request.getParameter("direccion");
-		String telefono = request.getParameter("telefono");
-		String correo = request.getParameter("correo");
-		String rubro = request.getParameter("rubro");
+		String telefono = request.getParameter("fono");
+		String correo = request.getParameter("mail");
 
-		Cliente cliente = new Cliente(rut, nombre, rSocial, giro, direccion, telefono, correo, rubro);
+		Profesional profesional = new Profesional(rut, nombre,  direccion, telefono, correo);
 
-		boolean editar = clienteDAO.actualizarCliente(cliente);
+		boolean editar = ProfesionalDAO.actualizarProfesional(profesional);
 		
-		List<Cliente> listadoNuevo = clienteDAO.listarClientes();
+		List<Profesional> listadoNuevo = ProfesionalDAO.listarProfesionales();
 
 		String mensaje = "";
 
 		if (editar)
-			mensaje = "El cliente se ha editado exitosamente";
+			mensaje = "El Profesional se ha editado exitosamente";
 		else
-			mensaje = "Ocurrió un error al editar el cliente";
+			mensaje = "Ocurrió un error al editar el Profesional";
 
 		
 		request.setAttribute("alerta", mensaje);
-		request.setAttribute("lista_clientes", listadoNuevo);
-		request.getRequestDispatcher("/view/listadoClientes.jsp").forward(request, response);
+		request.setAttribute("lista_profesional", listadoNuevo);
+		request.getRequestDispatcher("/view/listadoProfesionales.jsp").forward(request, response);
 
 	}
 
@@ -195,22 +188,22 @@ public class AdminCliente extends HttpServlet {
 			throws SQLException, ServletException, IOException, ClassNotFoundException {
 
 		String rut = request.getParameter("id");
-		boolean eliminar = clienteDAO.eliminarCliente(rut);
+		boolean eliminar = ProfesionalDAO.eliminarProfesional(rut);
 
-		List<Cliente> listadoNuevo = clienteDAO.listarClientes();
+		List<Profesional> listadoNuevo = ProfesionalDAO.listarProfesionales();
 		
 
 		String mensaje = "";
 
 		if (eliminar)
-			mensaje = "El cliente se ha eliminado exitosamente";
+			mensaje = "El Profesional se ha eliminado exitosamente";
 		else
-			mensaje = "Ocurrió un error al editar el cliente";
+			mensaje = "Ocurrió un error al editar el Profesional";
 
 		request.setAttribute("alerta", mensaje);
-		request.setAttribute("lista_clientes", listadoNuevo);
+		request.setAttribute("lista_profesional", listadoNuevo);
 		
-		request.getRequestDispatcher("/view/listadoClientes.jsp").forward(request, response);
+		request.getRequestDispatcher("/view/listadoProfesionales.jsp").forward(request, response);
 
 	}
 

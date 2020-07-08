@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Login</title>
-		<link rel="stylesheet" href="css/styleIndex.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleIndex.css">
 	</head>
 	
 	

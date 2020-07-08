@@ -7,13 +7,13 @@ import model.Cliente;
 
 public interface IClienteDao {
 
-	boolean crearCliente(Cliente cliente) throws SQLException;
+	boolean crearCliente(Cliente cliente) throws SQLException, ClassNotFoundException;
 
-	List<Cliente> listarClientes() throws SQLException;
+	List<Cliente> listarClientes() throws SQLException, ClassNotFoundException;
 
-	boolean actualizarCliente(Cliente cliente);
+	boolean actualizarCliente(Cliente cliente) throws ClassNotFoundException, SQLException;
 
-	boolean eliminarCliente(Cliente cliente);
+	boolean eliminarCliente(String rut) throws ClassNotFoundException, SQLException;
 
-	Cliente obtenerPorRut(String rut) throws SQLException;
+	Cliente obtenerPorRut(String rut) throws SQLException, ClassNotFoundException;
 }

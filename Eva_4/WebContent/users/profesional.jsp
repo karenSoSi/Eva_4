@@ -12,11 +12,18 @@
 	
 	
 	<body>
+
 		<h1>Profesional</h1>
 		
+		<h3>Capacitaciones</h3>
+		<div><a href="${pageContext.request.contextPath}/view/registrarCapacitacion.jsp">Registro de Capacitaciones</a></div>
+		<div><a href="${pageContext.request.contextPath}/AdminCliente?action=listar">Listado de Capacitaciones</a></div>
+		
+		<h3>Visitas</h3>
+		<div><a href="${pageContext.request.contextPath}/view/registrarVisita.jsp">Registro de Visita</a></div>
+		<div><a href="${pageContext.request.contextPath}/AdminCliente?action=listar">Listado de Visitas</a></div>
+
 	
-		<div><a href="${pageContext.request.contextPath}/view/registrarCapacitacion.jsp">Formulario de Capacitación</a></div>
-		<div><a href="${pageContext.request.contextPath}/view/registrarVisita.jsp">Formulario de Visita</a></div>
 		
 		
 	</body>

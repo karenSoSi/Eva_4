@@ -18,16 +18,18 @@ h1{
     color: Black;
 	
 }
-input{
-	border: 1px solid black;
-}
+
 tr, th, td{
-	border: 1px solid black;
+	
 	padding: 5px;
 	
 }
 
 table {
 	border: 0.5px solid black;
-	padding: 2px;
+	padding: 5px;
+	background-color: white; 
+	border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px 5px 5px rgb(190, 190, 190);
+	
 }

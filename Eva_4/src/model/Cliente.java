@@ -1,8 +1,7 @@
 package model;
 
 public class Cliente {
-
-	private int idCliente;
+	
 	private String rutCliente;
 	private String nombreCliente;
 	private String razonSocial;
@@ -13,7 +12,6 @@ public class Cliente {
 	private String rubro;
 	private int estadoCliente;
 
-	
 	public Cliente(String rutCliente, String nombreCliente, String razonSocial, String giro,
 			String dirCliente, String fonoCliente, String mailCliente, String rubro) {
 		
@@ -30,12 +28,6 @@ public class Cliente {
 
 	}
 	
-	public int getId() {
-		return idCliente;
-	}
-	public void setId(int id) {
-		this.idCliente = id;
-	}
 	public String getRutCliente() {
 		return rutCliente;
 	}
@@ -93,7 +85,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + idCliente + ", rutCliente=" + rutCliente + ", nombreCliente=" + nombreCliente
+		return "Cliente [rutCliente=" + rutCliente + ", nombreCliente=" + nombreCliente
 				+ ", razonSocial=" + razonSocial + ", giro=" + giro + ", dirCliente=" + dirCliente
 				+ ", fonoCliente=" + fonoCliente + ", mailCliente=" + mailCliente + ", rubro=" + rubro
 				+ ", estadoCliente=" + estadoCliente + "]";

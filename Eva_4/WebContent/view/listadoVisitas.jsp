@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lista de Visita</title>
-	<link rel="stylesheet" href="../css/styleListado.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleListado.css">
 </head>
 
 
@@ -26,16 +26,16 @@
 
 		<c:forEach items="${lista_visita}" var="visita">
 			<tr>
-				<td>${cliente.getCliente()}</td>
-				<td>${cliente.getProfesional()}</td>
-				<td>${cliente.getFechaVisita()}</td>
-				<td>${cliente.getAsistentes()}</td>
-				<td>${cliente.getListaChequeo()}</td>
+				<td>${visita.getCliente()}</td>
+				<td>${visita.getProfesional()}</td>
+				<td>${visita.getFechaVisita()}</td>
+				<td>${visita.getAsistentes()}</td>
+				<td>${visita.getListaChequeo()}</td>
 
 				<td>
-					<a href="${pageContext.request.contextPath}/AdminProfesional?action=eliminar">Eliminar</a>
+					<a href="${pageContext.request.contextPath}/AdminVisita?action=eliminar">Eliminar</a>
 					&nbsp; 
-					<a href="${pageContext.request.contextPath}/AdminProfesional?id=actualizar">Actualizar</a>
+					<a href="${pageContext.request.contextPath}/AdminVisita?id=actualizar">Actualizar</a>
 				</td>
 			</tr>
 		</c:forEach>

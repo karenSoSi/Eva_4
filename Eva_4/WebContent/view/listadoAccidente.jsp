@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Lista de Accidente</title>
-		<link rel="stylesheet" href="../css/styleListado.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleListado.css">
 	</head>
 	
 	
@@ -29,20 +29,20 @@
 
 		<c:forEach items="${lista_accidente}" var="accidente">
 			<tr>
-				<td>${cliente.getNombreCliente()}</td>
-				<td>${cliente.getRutCliente()}</td>
-				<td>${cliente.getFonoCliente()}</td>
-				<td>${cliente.getMailCliente()}</td>
-				<td>${cliente.getTipoAccidente()}</td>
-				<td>${cliente.getFechaAccidente()}</td>
-				<td>${cliente.gethoraAccidente()}</td>
-				<td>${cliente.getDescripcion()}</td>
+				<td>${accidente.getNombreCliente()}</td>
+				<td>${accidente.getRutCliente()}</td>
+				<td>${accidente.getFonoCliente()}</td>
+				<td>${accidente.getMailCliente()}</td>
+				<td>${accidente.getTipoAccidente()}</td>
+				<td>${accidente.getFechaAccidente()}</td>
+				<td>${accidente.gethoraAccidente()}</td>
+				<td>${accidente.getDescripcion()}</td>
 				
 				
 				<td>
-					<a href="${pageContext.request.contextPath}/AdminProfesional?action=eliminar">Eliminar</a>
+					<a href="${pageContext.request.contextPath}/AdminAccidente?action=eliminar">Eliminar</a>
 					&nbsp; 
-					<a href="${pageContext.request.contextPath}/AdminProfesional?id=actualizar">Actualizar</a>
+					<a href="${pageContext.request.contextPath}/AdminAccidente?id=actualizar">Actualizar</a>
 				</td>
 				
 			</tr>

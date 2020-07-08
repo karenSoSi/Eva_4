@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Datos Visita</title>
-		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleMostrar.css">
 
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		

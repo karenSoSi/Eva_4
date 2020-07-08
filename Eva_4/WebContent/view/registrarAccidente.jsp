@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Registro de Accidente</title>
-		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleMostrar.css">
 		
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		
@@ -77,11 +77,11 @@
 					<td><input type="text" name="telefono" required/></td>
 				</tr>
 				<tr>
-					<td>Correo</td>
+					<td>Correo:</td>
 					<td><input type="text" name="correo" required/></td>
 				</tr>
 				<tr>
-					<td>Tipo de Accidente</td>
+					<td>Tipo de Accidente:</td>
 					<td>
 						<select name="accidente" required>
 			              	<option> Leve</option>
@@ -92,15 +92,15 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Fecha Accidente</td>
+					<td>Fecha Accidente:</td>
 					<td><input type="text" id="datepicker" name="fecha" class="col1" required/></td>
 				</tr>
 				<tr>
-					<td>Hora Accidente</td>
+					<td>Hora Accidente:</td>
 					<td><input type="text" id="timepicker" autocomplete="off" name="hora" required/></td>
 				</tr>
 				<tr>
-					<td>Descripción</td>
+					<td>Descripción:</td>
 					<td><textarea name="descripcion" rows="4" cols="50" required></textarea></td>
 				</tr>
 				

@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lista de Capacitación</title>
-	<link rel="stylesheet" href="../css/styleListado.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/styleListado.css">
 </head>
 
 
@@ -26,17 +26,17 @@
 
 		<c:forEach items="${lista_capacitacion}" var="capacitacion">
 			<tr>
-				<td>${cliente.getCliente()}</td>
-				<td>${cliente.getProfesional()}</td>
-				<td>${cliente.getFechaCapacitacion()}</td>
-				<td>${cliente.getHoraCapacitacion()}</td>
-				<td>${cliente.getAsistentes()}</td>
-				<td>${cliente.getTema()}</td>
+				<td>${capacitacion.getCapacitacion()}</td>
+				<td>${capacitacion.getCapacitacion()}</td>
+				<td>${capacitacion.getFechaCapacitacion()}</td>
+				<td>${capacitacion.getHoraCapacitacion()}</td>
+				<td>${capacitacion.getAsistentes()}</td>
+				<td>${capacitacion.getTema()}</td>
 
 				<td>
-					<a href="${pageContext.request.contextPath}/AdminProfesional?action=eliminar">Eliminar</a>
+					<a href="${pageContext.request.contextPath}/AdminCapacitacion?action=eliminar">Eliminar</a>
 					&nbsp; 
-					<a href="${pageContext.request.contextPath}/AdminProfesional?id=actualizar">Actualizar</a>
+					<a href="${pageContext.request.contextPath}/AdminCapacitacion?id=actualizar">Actualizar</a>
 				</td>
 			</tr>
 		</c:forEach>
@@ -44,6 +44,6 @@
 	</table>
 	
 	<br>
-	<a href="${pageContext.request.contextPath}/users/administrador.jsp" >Volver</a>
+	<a href="${pageContext.request.contextPath}/users/administrador.jsp">Volver</a>
 </body>
 </html>
